@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-block d-lg-none">FlowRep implementación</span>
         <span class="d-none d-lg-block">
           <!--<img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">-->
         </span>
@@ -184,8 +184,10 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="reporte">
         <div class="my-auto">
           <h2 class="mb-5">Reporte</h2>
-          <h3 class="mb-5">Objetivos del proyecto</h3>
-            <ul class="fa-ul">
+          <h3 class="mb-3">Acerca del artículo</h3>
+          <p class="mb-5">El artículo elegido presenta un algoritmo que procesa mallas cuadrangular dominante y las representa en un conjunto de lineas de flujo las cuales describan el modelo de entrada. </p>
+          <h3 class="mb-3">Objetivos del proyecto</h3>
+            <ul class="fa-ul mb-5">
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Implementar lectura de entrada quad-dominant mesh.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Crear un grafo con las aristas como nodos y determinar los pesos.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Realizar el Clustering de Correlación para obtener las hebras iniciales.</li>
@@ -199,9 +201,23 @@
                 <li><i class="fa-li fa fa-times" style="color:red"></i>Realizar la optimización de la red.</li>
                 <li><i class="fa-li fa fa-times" style="color:red"></i>Crear la red final regularizada.</li>
             </ul>
-            <p>.</p>
-          <h4 class="mb-5">Hebras iniciales</h4>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
+          <h3 class="mb-0">Detalles de la implementación</h3>
+          <p class="mb-5">En esta sección se mostrarán los detalles de la implementación de cada uno de los objetivos propuestos alcanzados.</p>
+          <h4 class="mb-2">Entrada del algoritmo</h4>
+          <p class="mb-2">Para realizar la lectura de la entrada del algoritmo se realizó una función que recibe por enetrada modelos ".obj" los cuales contienen cuadrados y triángulos. En esta etapa se realiza la conversión de "faces" a líneas y puntos. También se calculan las normales para cada vértice, ya que los puntos de los cuadriláteros de la malla no son necesariamente complanares.</p>
+          <center> <img src="img/img_entrada.png" align="middle" width="500px"></img> </center>
+          <br/><br/>
+          <h4 class="mb-2">Creación del grafo</h4>
+          <p class="mb-2">Después de haber leído el modelo en un conjunto de vértices y aristas se convirtió la estructura inicial a grafo donde cada uno de los nodos es una arista y los pesos son definidos cuando dos aristas (i, j) comparten un vértice utilizando la siguiente ecuación:</p>
+          <center> <img src="img/img_ecuacion_6.png" align="middle" width="250px"></img> </center>
+          <p class="mb-2">Donde &alpha; es la diferencia de ángulo entre las proyecciones de cada arista sobre el plano tangente del punto que comparten, &sigma;1 = 5, wn = -5, &sigma;2 = 15. Esa fórmula hace que los pesos sean positivos cuando las líneas son más paralelas que perpendiculares y negativo si es lo contrario.</p>
+          <p class="mb-2">Además cuando dos aristas i, j eran lados opuestos en un cuadrilátero de la malla, el peso se definía usando la siguiente fórmula:</p>
+          <center> <img src="img/img_ecuacion_7.png" align="middle" width="130px"></img> </center>
+          <p class="mb-5">Donde &alpha; es la diferencia de ángulo entre ambas aristas, &sigma;3 = 5, wp = 0.05.</p>
+          <h4 class="mb-2">Relización del clustering de correlación</h4>
+          <p class="mb-2">Para realizar el clustering de correlación se utilizó el enfoque aplicado en el paper "Effcient Decomposition of Image and Mesh Graphs by Lifted Multicuts", utilizando la implementación de Bjoern Andres (<a href="https://github.com/bjoern-andres/graph">https://github.com/bjoern-andres/graph</a>), el cual es uno de los autores del paper citado.</p>
+          <p class="mb-2">Luego de realizar el clustering de correlación, el resultado es el siguiente:</p>
+          <center> <img src="img/img_clustering.png" align="middle" width="500px"></img> </center>
         </div>
       </section>
 
