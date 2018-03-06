@@ -124,6 +124,7 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="slides">
         <div class="my-auto">
           <h2 class="mb-5">Slides</h2>
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vScOGCtngQMtLLi9JCO-OqPlqbWHsb4Czyk6UeuVFCbBtw4xC0prVYrHTxIqRLHHP0IK7AiV4cY4FuV/embed?start=true&loop=true&delayms=5000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
         <!--  <div class="subheading mb-3">Programming Languages &amp; Tools</div>
           <ul class="list-inline list-icons">
@@ -186,12 +187,14 @@
           <h2 class="mb-5">Reporte</h2>
           <h3 class="mb-3">Acerca del artículo</h3>
           <p class="mb-5">El artículo elegido presenta un algoritmo que procesa mallas cuadrangular dominante y las representa en un conjunto de lineas de flujo las cuales describan el modelo de entrada. </p>
+          <center> <img src="img/img_article_objective.png" align="middle" width="600px"></img> </center>
           <h3 class="mb-3">Objetivos del proyecto</h3>
             <ul class="fa-ul mb-5">
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Implementar lectura de entrada quad-dominant mesh.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Crear un grafo con las aristas como nodos y determinar los pesos.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Realizar el Clustering de Correlación para obtener las hebras iniciales.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Extraer las lineas de flujo iniciales.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Transformar las líneas de flujo en una estructura de grafo.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Realizar el clustering de correlación con las lineas de flujo iniciales.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Extraer líneas de flujo confiables.</li>
                 <li><i class="fa-li fa fa-check" style="color:green"></i>Utilizar "Ridge and Valley detection".</li>
@@ -215,11 +218,66 @@
           <center> <img src="img/img_ecuacion_7.png" align="middle" width="130px"></img> </center>
           <p class="mb-5">Donde &alpha; es la diferencia de ángulo entre ambas aristas, &sigma;3 = 5, wp = 0.05.</p>
           <h4 class="mb-2">Relización del clustering de correlación</h4>
-          <p class="mb-2">Para realizar el clustering de correlación se utilizó el enfoque aplicado en el paper "Effcient Decomposition of Image and Mesh Graphs by Lifted Multicuts", utilizando la implementación de Bjoern Andres (<a href="https://github.com/bjoern-andres/graph">https://github.com/bjoern-andres/graph</a>), el cual es uno de los autores del paper citado.</p>
+          <p class="mb-2">Para realizar el clustering de correlación se utilizó el enfoque aplicado en el paper "Efficient Decomposition of Image and Mesh Graphs by Lifted Multicuts", utilizando la implementación de Bjoern Andres (<a href="https://github.com/bjoern-andres/graph">https://github.com/bjoern-andres/graph</a>), el cual es uno de los autores del paper citado.</p>
           <p class="mb-2">Luego de realizar el clustering de correlación, el resultado es el siguiente:</p>
           <center> <img src="img/img_clustering.png" align="middle" width="500px"></img> </center>
+          <p class="mb-2">En la imagen existen lineas que comparten colores, éstas pertenecen a los mismos clusters, como por ejemplo este cluster:</p>
+          <center> <img src="img/img_cluster.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Extracción de flowlines iniciales</h4>
+          <p class="mb-2">Luego de realizar el clustering de correlación, se extraen flowlines iniciales a partir de cada cluster, obteniéndose así los siguientes resultados:</p>
+          <center> <img src="img/img_initial_flowlines.png" align="middle" width="500px"></img> </center>
+          <p class="mb-2">Similar a los resultados obendidos en anteriores etapas, colores diferentes siginifican flowlines diferentes; la variante principal es que hay colores repetidos en secciones alejadas que no pertenecen a la misma línea de flujo, por ejemplo:</p>
+          <center> <img src="img/img_flowline.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Creación del segundo grafo</h4>
+          <p class="mb-2">Después de haber obtenido las lineas de flujo iniciales se convirtió la estructura de flowlines a grafo donde cada uno de los nodos es un flowline y los pesos son definidos utiliznado 3 criterios: cuando dos aristas (i, j) comparten un vértice final utilizando la primera ecuación, pero utilizando un &sigma;1 = 7.5 más tolerante; para líneas que comparten dos vértices finales, se suman los valores.</p>
+          <p class="mb-2">Cuando 2 flowlines contienen aristas contrarias en un mismo cudadrilátero del modelo, se calcula el peso como la sumatoria de los ángulos entre las aristas que son opuestas en un cuadrilátero, multiplicada por una proporción de la línea de flujo "l" más corta.</p>
+          <center> <img src="img/img_ecuacion_8.png" align="middle" width="140px"></img> </center>
+          <p class="mb-2">Como se pudo observar con anterioridad, las líneas que se cruzan entre si no deberían pertenecer al mismo cluster. Entonces se designa el peso negativo más alto (-25) para cada uno de los pares de líneas de flujo cruzadas.</p>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Clustering de correlación</h4>
+          <p class="mb-2">Se aplicó el clustering de correlación por segunda vez, este clustering se utilizó para corregir pequeños errores de líneas de flujo que tenían longitud muy pequeña y podían pertenecer a otras líenas de flujo. Se aplicó el mismo enfoque y función de antes, el resultado es el siguiente:</p>
+          <center> <img src="img/img_flowline_strands.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Extracción de flowlines confiables</h4>
+          <p class="mb-2">Para la extracción de las líneas de flujo confiables se realizó un enfoque goloso, priorizando la extracción de lineas con mayor proyectividad y longitud. Así para cada componente conectado se extraen primero las líneas de flujo cerradas, priorizando las que tienen mayor proyectividad si hay multiples opciones Luego se extraen las que tienen mayor longitud y no se pueden extender. Por la naturaleza de la mala se pueden generar espirales, en esos casos se extrae unicamente un anillo. El resultado de este proceso es el siguiente:</p>
+          <center> <img src="img/img_reliable_flowlines.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Uso de "Rigde and Valley detection"</h4>
+          <p class="mb-2">Para la inicialización de la red final se debe utilizar un algoritmo de extracción de características, "Fast and Robust Detection of Crest Lines on Meshes" de Shin Yoshizawa propone un algoritmo para realizar dicha tarea en una malla triangular. Su algoritmo se basa en utilizar la primera y segunda derivada de las curvas para extraer dichas características.</p>
+          <p class="mb-2">Para poder utilizarlo en la implementación actual se tuvo que convertir la malla a triangular, utilizando "i3DConverter":</p>
+          <center> <img src="img/img_triangular_mesh.png" align="middle" width="300px"></img> </center>
+          <p class="mb-2">Luego se realizó el cálculo de su algoritmo y se aplicó un filtro de ciclicidad para reducir la cantidad de características extraidas</p>
+          <center> <img src="img/img_ridge_valley.png" align="middle" width="300px"></img> </center>
+          <p class="mb-2">Sin embargo, las características resultantes no siempre contienen un ciclo completo, lo cual dificulta el siguiente paso que es hacer una segmentacion de la malla.</p>
+          <br/>
+          <br/>
+          <h3 class="mb-2">Limitaciones en la implementación</h3>
+          <p class="mb-2">Las principal limitacion que se tuvo en la etapa de implementación del algoritmo, fue las omisiones de detalles de implementación, especialmente en el uso de herramientas externas.</p>
+          <br/>
+          <br/>
+          <h3 class="mb-2">Resultados de la implementación</h3>
+          <p class="mb-2">Al no estar completa la implementación del artículo, solo se mostrarán comparaciones del proceso.</p>
+          <br/>
+          <p class="mb-2">Comparación de strands:</p>
+          <center>
+              <img src="img/img_results_strand_comparison.png" align="middle" width="700px"></img>
+          </center>
+          <br/>
+          <br/>
+          <p class="mb-2">Comparación de flowlines:</p>
+          <center>
+              <img src="img/img_results_flowlines_comparison.png" align="middle" width="500px"></img>
+          </center>
         </div>
       </section>
+
 
       <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
         <div class="my-auto">
