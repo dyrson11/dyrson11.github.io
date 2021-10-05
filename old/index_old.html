@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FlowRep implementation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">FlowRep implementación</span>
+        <span class="d-none d-lg-block">
+          <!--<img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">-->
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#title">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#abstract">Abstract</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#slides">Slides</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#reporte">Reporte</a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+        </li>-->
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="title">
+        <div class="my-auto">
+          <h2 class="mb-0">Implementación de artículo de SIGRAPH 2017</h2>
+          <h3> <span class="text-primary">FlowRep: descriptive curve networks for free form design shapes</span> <h3>
+          <div class="subheading mb-5">Gerson Waldyr Vizcarra Aguilar - Universidad Católica San Pablo
+            <a href="mailto:gerson.vizcarra@ucsp.edu.pe">gerson.vizcarra@ucsp.edu.pe</a>
+          </div>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://github.com/dyrson11/Computer-Graphics-Projects/tree/master/Final-Project">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/dyrson11/Computer-Graphics-Projects/archive/master.zip">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="abstract">
+        <div class="my-auto">
+          <h2 class="mb-5">Resumen</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <p>
+                  En este informe se presenta FlowRep, un algoritmo que procesa modelos de mallas de entrada para representarlos en un conjunto de lineas descriptivas que representen el modelo de entrada. La idea de la que se parte es que una malla tiene un conjunto de redes descriptivas las cuales representan la malla a la que rodean, al proyectar estas redes sobre un plano 2D deben dar la apariencia de profundidad que describa el objeto en 3D. La proyectabilidad y descriptividad de las redes que se obtengan como resultado se logran utilizando flowlines(lineas de flujo), curvas alineadas con la malla de entrada.
+                  La implementación realizada parte de una malla cuadrangular dominante, de la cual se extraen las lineas de flujo que serán utilizadas para formar la red final que describa el modelo de entrada. El avance actual de la implementación se limita al calculo de la totalidad de las líneas de flujo confiables, cabe resaltar que el artículo no posee código fuente.
+              </p>
+            </div>
+            <!--<div class="resume-date text-md-right">
+              <span class="text-primary">March 2013 - Present</span>
+          </div>-->
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="video">
+        <div class="my-auto">
+          <h2 class="mb-5">Video</h2>
+
+            <iframe src="https://player.vimeo.com/video/258802762" width="320" height="240" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="slides">
+        <div class="my-auto">
+          <h2 class="mb-5">Slides</h2>
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vScOGCtngQMtLLi9JCO-OqPlqbWHsb4Czyk6UeuVFCbBtw4xC0prVYrHTxIqRLHHP0IK7AiV4cY4FuV/embed?start=true&loop=true&delayms=5000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+        <!--  <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-inline list-icons">
+            <li class="list-inline-item">
+              <i class="devicons devicons-atom"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-c"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-javascript"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-jquery"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-sass"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-less"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-bootstrap"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-wordpress"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-grunt"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-gulp"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-npm"></i>
+            </li>
+          </ul>
+
+          <div class="subheading mb-3">Workflow</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Mobile-First, Responsive Design</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Browser Testing &amp; Debugging</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Functional Teams</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Agile Development &amp; Scrum</li>
+          </ul>
+      -->
+      </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="reporte">
+        <div class="my-auto">
+          <h2 class="mb-5">Reporte</h2>
+          <h3 class="mb-3">Acerca del artículo</h3>
+          <p class="mb-5">El artículo elegido presenta un algoritmo que procesa mallas cuadrangular dominante y las representa en un conjunto de lineas de flujo las cuales describan el modelo de entrada. </p>
+          <center> <img src="img/img_article_objective.png" align="middle" width="600px"></img> </center>
+          <h3 class="mb-3">Objetivos del proyecto</h3>
+            <ul class="fa-ul mb-5">
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Implementar lectura de entrada quad-dominant mesh.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Crear un grafo con las aristas como nodos y determinar los pesos.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Realizar el Clustering de Correlación para obtener las hebras iniciales.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Extraer las lineas de flujo iniciales.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Transformar las líneas de flujo en una estructura de grafo.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Realizar el clustering de correlación con las lineas de flujo iniciales.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Extraer líneas de flujo confiables.</li>
+                <li><i class="fa-li fa fa-check" style="color:green"></i>Utilizar "Ridge and Valley detection".</li>
+                <li><i class="fa-li fa fa-times" style="color:red"></i>Segmentar la imagen con el resultado.</li>
+                <li><i class="fa-li fa fa-times" style="color:red"></i>Crear y simplificar red.</li>
+                <li><i class="fa-li fa fa-times" style="color:red"></i>Realizar la optimización de la red.</li>
+            </ul>
+          <h3 class="mb-0">Detalles de la implementación</h3>
+          <p class="mb-5">En esta sección se mostrarán los detalles de la implementación de cada uno de los objetivos propuestos alcanzados.</p>
+          <h4 class="mb-2">Entrada del algoritmo</h4>
+          <p class="mb-2">Para realizar la lectura de la entrada del algoritmo se realizó una función que recibe por enetrada modelos ".obj" los cuales contienen cuadrados y triángulos. En esta etapa se realiza la conversión de "faces" a líneas y puntos. También se calculan las normales para cada vértice, ya que los puntos de los cuadriláteros de la malla no son necesariamente complanares.</p>
+          <center> <img src="img/img_entrada.png" align="middle" width="500px"></img> </center>
+          <br/><br/>
+          <h4 class="mb-2">Creación del grafo</h4>
+          <p class="mb-2">Después de haber leído el modelo en un conjunto de vértices y aristas se convirtió la estructura inicial a grafo donde cada uno de los nodos es una arista y los pesos son definidos cuando dos aristas (i, j) comparten un vértice utilizando la siguiente ecuación:</p>
+          <center> <img src="img/img_ecuacion_6.png" align="middle" width="250px"></img> </center>
+          <p class="mb-2">Donde &alpha; es la diferencia de ángulo entre las proyecciones de cada arista sobre el plano tangente del punto que comparten, &sigma;1 = 5, wn = -5, &sigma;2 = 15. Esa fórmula hace que los pesos sean positivos cuando las líneas son más paralelas que perpendiculares y negativo si es lo contrario.</p>
+          <p class="mb-2">Además cuando dos aristas i, j eran lados opuestos en un cuadrilátero de la malla, el peso se definía usando la siguiente fórmula:</p>
+          <center> <img src="img/img_ecuacion_7.png" align="middle" width="130px"></img> </center>
+          <p class="mb-5">Donde &alpha; es la diferencia de ángulo entre ambas aristas, &sigma;3 = 5, wp = 0.05.</p>
+          <h4 class="mb-2">Relización del clustering de correlación</h4>
+          <p class="mb-2">Para realizar el clustering de correlación se utilizó el enfoque aplicado en el paper "Efficient Decomposition of Image and Mesh Graphs by Lifted Multicuts", utilizando la implementación de Bjoern Andres (<a href="https://github.com/bjoern-andres/graph">https://github.com/bjoern-andres/graph</a>), el cual es uno de los autores del paper citado.</p>
+          <p class="mb-2">Luego de realizar el clustering de correlación, el resultado es el siguiente:</p>
+          <center> <img src="img/img_clustering.png" align="middle" width="500px"></img> </center>
+          <p class="mb-2">En la imagen existen lineas que comparten colores, éstas pertenecen a los mismos clusters, como por ejemplo este cluster:</p>
+          <center> <img src="img/img_cluster.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Extracción de flowlines iniciales</h4>
+          <p class="mb-2">Luego de realizar el clustering de correlación, se extraen flowlines iniciales a partir de cada cluster, obteniéndose así los siguientes resultados:</p>
+          <center> <img src="img/img_initial_flowlines.png" align="middle" width="500px"></img> </center>
+          <p class="mb-2">Similar a los resultados obendidos en anteriores etapas, colores diferentes siginifican flowlines diferentes; la variante principal es que hay colores repetidos en secciones alejadas que no pertenecen a la misma línea de flujo, por ejemplo:</p>
+          <center> <img src="img/img_flowline.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Creación del segundo grafo</h4>
+          <p class="mb-2">Después de haber obtenido las lineas de flujo iniciales se convirtió la estructura de flowlines a grafo donde cada uno de los nodos es un flowline y los pesos son definidos utiliznado 3 criterios: cuando dos aristas (i, j) comparten un vértice final utilizando la primera ecuación, pero utilizando un &sigma;1 = 7.5 más tolerante; para líneas que comparten dos vértices finales, se suman los valores.</p>
+          <p class="mb-2">Cuando 2 flowlines contienen aristas contrarias en un mismo cudadrilátero del modelo, se calcula el peso como la sumatoria de los ángulos entre las aristas que son opuestas en un cuadrilátero, multiplicada por una proporción de la línea de flujo "l" más corta.</p>
+          <center> <img src="img/img_ecuacion_8.png" align="middle" width="140px"></img> </center>
+          <p class="mb-2">Como se pudo observar con anterioridad, las líneas que se cruzan entre si no deberían pertenecer al mismo cluster. Entonces se designa el peso negativo más alto (-25) para cada uno de los pares de líneas de flujo cruzadas.</p>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Clustering de correlación</h4>
+          <p class="mb-2">Se aplicó el clustering de correlación por segunda vez, este clustering se utilizó para corregir pequeños errores de líneas de flujo que tenían longitud muy pequeña y podían pertenecer a otras líenas de flujo. Se aplicó el mismo enfoque y función de antes, el resultado es el siguiente:</p>
+          <center> <img src="img/img_flowline_strands.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Extracción de flowlines confiables</h4>
+          <p class="mb-2">Para la extracción de las líneas de flujo confiables se realizó un enfoque goloso, priorizando la extracción de lineas con mayor proyectividad y longitud. Así para cada componente conectado se extraen primero las líneas de flujo cerradas, priorizando las que tienen mayor proyectividad si hay multiples opciones Luego se extraen las que tienen mayor longitud y no se pueden extender. Por la naturaleza de la mala se pueden generar espirales, en esos casos se extrae unicamente un anillo. El resultado de este proceso es el siguiente:</p>
+          <center> <img src="img/img_reliable_flowlines.png" align="middle" width="500px"></img> </center>
+          <br/>
+          <br/>
+          <h4 class="mb-2">Uso de "Rigde and Valley detection"</h4>
+          <p class="mb-2">Para la inicialización de la red final se debe utilizar un algoritmo de extracción de características, "Fast and Robust Detection of Crest Lines on Meshes" de Shin Yoshizawa propone un algoritmo para realizar dicha tarea en una malla triangular. Su algoritmo se basa en utilizar la primera y segunda derivada de las curvas para extraer dichas características.</p>
+          <p class="mb-2">Para poder utilizarlo en la implementación actual se tuvo que convertir la malla a triangular, utilizando "i3DConverter":</p>
+          <center> <img src="img/img_triangular_mesh.png" align="middle" width="300px"></img> </center>
+          <p class="mb-2">Luego se realizó el cálculo de su algoritmo y se aplicó un filtro de ciclicidad para reducir la cantidad de características extraidas</p>
+          <center> <img src="img/img_ridge_valley.png" align="middle" width="300px"></img> </center>
+          <p class="mb-2">Sin embargo, las características resultantes no siempre contienen un ciclo completo, lo cual dificulta el siguiente paso que es hacer una segmentacion de la malla.</p>
+          <br/>
+          <br/>
+          <h3 class="mb-2">Limitaciones en la implementación</h3>
+          <p class="mb-2">Las principal limitacion que se tuvo en la etapa de implementación del algoritmo, fue las omisiones de detalles de implementación, especialmente en el uso de herramientas externas.</p>
+          <br/>
+          <br/>
+          <h3 class="mb-2">Resultados de la implementación</h3>
+          <p class="mb-2">Al no estar completa la implementación del artículo, solo se mostrarán comparaciones del proceso.</p>
+          <br/>
+          <p class="mb-2">Comparación de strands:</p>
+          <center>
+              <img src="img/img_results_strand_comparison.png" align="middle" width="700px"></img>
+          </center>
+          <br/>
+          <br/>
+          <p class="mb-2">Comparación de flowlines:</p>
+          <center>
+              <img src="img/img_results_flowlines_comparison.png" align="middle" width="500px"></img>
+          </center>
+        </div>
+      </section>
+
+
+      <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+        <div class="my-auto">
+          <h2 class="mb-5">Awards &amp; Certifications</h2>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              Google Analytics Certified Developer</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              Mobile Web Specialist - Google Certification</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1<sup>st</sup>
+              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1<sup>st</sup>
+              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              2<sup>nd</sup>
+              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
+            <li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              1<sup>st</sup>
+              Place - James Buchanan High School - Hackathon 2006</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              3<sup>rd</sup>
+              Place - James Buchanan High School - Hackathon 2005</li>
+          </ul>
+        </div>
+      </section>
+
+  </div>-->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+  </body>
+
+</html>
