@@ -1401,3 +1401,7 @@ ul#nav li.current a {
   /* color: #ff8b3e */
   color: rgba(82, 95, 179, 0.95)
 }
+
+#fh5co-footer p {
+  color: #fff;
+}
